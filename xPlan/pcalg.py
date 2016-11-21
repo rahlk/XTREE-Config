@@ -249,13 +249,13 @@ def estimate_cpdag(skel_graph, sep_set):
 
 if __name__ == '__main__':
 
-    # ch = logging.StreamHandler()
-    # ch.setLevel(logging.DEBUG)
-    # _logger.setLevel(logging.DEBUG)
-    # _logger.addHandler(ch)
-
-    dm = np.array(bin_data).reshape((5000, 5))
-    (g, sep_set) = estimate_skeleton(indep_test_func=ci_test_bin,
+    from pdb import set_trace
+    from sample_data.data import get_all_as_pandas
+    from discretize import discreteTbl
+    # dm = np.array(bin_data).reshape((5000, 5))
+    dm = get_all_as_pandas()
+    dis_dim = discreteTbl(dm).values
+    (g, sep_set) = estimate_skeleton(indep_test_func=ci_test_dis,
                                      data_matrix=dm,
                                      alpha=0.01)
     g = estimate_cpdag(skel_graph=g, sep_set=sep_set)
