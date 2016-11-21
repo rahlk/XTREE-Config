@@ -1,1 +1,14 @@
 
+# Libraries for "Completed Partially Directed Acyclic Graph"
+networkx>=1.9.1
+gsq>=0.1.5
+
+# Other stuff
+scikit-learn
+matplotlib
+numpy
+scipy
+click
+matplotlib
+pandas
+pypandoc
